@@ -1,0 +1,266 @@
+@font-face {
+  font-family: 'Nerd Font'; font-display: swap;
+  src: local('SymbolsNerdFont'), local('SymbolsNerdFont-Regular'), url('../fonts/SymbolsNerdFont.woff2') format('woff2');
+}
+
+
+
+*, *::before, *::after { box-sizing: border-box; }
+
+:root, html { font-size: 62.5%; }
+
+[catppuccin] {
+
+  --rosewater: rgb(242, 213, 207);
+  --rosewater-raw: 242, 213, 207;
+  --flamingo: rgb(238, 190, 190);
+  --flamingo-raw: 238, 190, 190;
+  --pink: rgb(244, 184, 228);
+  --pink-raw: 244, 184, 228;
+  --mauve: rgb(202, 158, 230);
+  --mauve-raw: 202, 158, 230;
+  --red: rgb(231, 130, 132);
+  --red-raw: 231, 130, 132;
+  --maroon: rgb(234, 153, 156);
+  --maroon-raw: 234, 153, 156;
+  --peach: rgb(239, 159, 118);
+  --peach-raw: 239, 159, 118;
+  --yellow: rgb(229, 200, 144);
+  --yellow-raw: 229, 200, 144;
+  --green: rgb(166, 209, 137);
+  --green-raw: 166, 209, 137;
+  --teal: rgb(129, 200, 190);
+  --teal-raw: 129, 200, 190;
+  --sky: rgb(153, 209, 219);
+  --sky-raw: 153, 209, 219;
+  --sapphire: rgb(133, 193, 220);
+  --sapphire-raw: 133, 193, 220;
+  --blue: rgb(140, 170, 238);
+  --blue-raw: 140, 170, 238;
+  --lavender: rgb(186, 187, 241);
+  --lavender-raw: 186, 187, 241;
+  --text: rgb(198, 208, 245);
+  --text-raw: 198, 208, 245;
+  --subtext1: rgb(181, 191, 226);
+  --subtext1-raw: 181, 191, 226;
+  --subtext0: rgb(165, 173, 206);
+  --subtext0-raw: 165, 173, 206;
+  --overlay2: rgb(148, 156, 187);
+  --overlay2-raw: 148, 156, 187;
+  --overlay1: rgb(131, 139, 167);
+  --overlay1-raw: 131, 139, 167;
+  --overlay0: rgb(115, 121, 148);
+  --overlay0-raw: 115, 121, 148;
+  --surface2: rgb(98, 104, 128);
+  --surface2-raw: 98, 104, 128;
+  --surface1: rgb(81, 87, 109);
+  --surface1-raw: 81, 87, 109;
+  --surface0: rgb(65, 69, 89);
+  --surface0-raw: 65, 69, 89;
+  --base: rgb(48, 52, 70);
+  --base-raw: 48, 52, 70;
+  --mantle: rgb(41, 44, 60);
+  --mantle-raw: 41, 44, 60;
+  --crust: rgb(35, 38, 52);
+  --crust-raw: 35, 38, 52;
+
+}
+
+
+
+body {
+
+  margin: 0 auto; padding: 4.8rem;
+  width: 100%; max-width: 1200px; min-height: 100vh;
+
+  background-color: var(--base);
+
+  font-family: sans-serif;
+  font-size: 2rem;
+  color: var(--text);
+
+}
+
+@media (max-width: 400px) {
+  body { padding: 2.4rem; }
+}
+
+
+::selection {
+
+  background-color: var(--subtext0);
+
+  color: var(--crust);
+
+}
+
+
+h3, p { margin: 0; padding: 0; }
+a { text-decoration: none; }
+
+
+.icon { font-family: 'Nerd Font' !important; }
+
+.text-mauve { color: var(--mauve); }
+
+
+
+
+
+.about {
+
+  display: flex;
+  align-items: center; justify-content: space-between;
+
+  margin-block-end: 4.8rem;
+
+}
+
+@media (max-width: 500px) {
+  .about {
+
+    flex-direction: column-reverse;
+
+    margin-block-end: 4.8rem;
+
+    text-align: center;
+
+  }
+}
+
+
+.about-name { font-size: 2.4rem; }
+
+
+.about-image {
+
+  width: 56px; height: auto;
+  padding: 3px;
+
+  border-radius: 100%;
+  background-image: linear-gradient(-45deg, var(--lavender), var(--pink));
+
+}
+
+@media (max-width: 500px) {
+  .about-image { width: 75px; }
+}
+
+
+
+
+
+.card-grid {
+
+  display: grid; gap: 4.8rem;
+  grid-template: auto / repeat(auto-fit, minmax(300px, 1fr));
+
+}
+
+@media (max-width: 400px) {
+  .card-grid {
+
+    gap: 2.4rem;
+    grid-template: auto / repeat(auto-fit, minmax(200px, 1fr));
+
+  }
+}
+
+
+.card {
+
+  display: flex; flex-direction: column; gap: 1.2rem;
+  justify-content: flex-start; justify-content: space-between;
+
+  width: 100%;
+  padding: 2.4rem;
+
+  border-radius: 8px;
+  background-color: var(--mantle);
+  box-shadow: 0 5px 2rem rgba(var(--crust-raw), .3);
+
+  transition: transform 250ms ease-in-out;
+
+}
+
+.card:hover, card:focus, .card:focus-within { transform: scale(1.025); }
+
+
+.card-header {
+
+  position: relative;
+  display: flex;
+  align-items: center; justify-content: center;
+
+  margin: -2.4rem -2.4rem 1.2rem -2.4rem;
+  height: 200px;
+
+  border-radius: 8px;
+  background-image: linear-gradient(150deg, rgba(var(--gradient-colour), 1), rgba(var(--gradient-colour), .75) 60%);
+
+  font-size: 5rem;
+  color: var(--crust);
+
+}
+
+@media (max-width: 400px) {
+  .card-header { height: 150px; }
+}
+
+
+.card-pill {
+
+  position: absolute;
+  top: 1.2rem; right: 1.2rem;
+  display: flex;
+  align-items: center; justify-content: center;
+
+  padding: .6rem 1.2rem;
+
+  border-radius: 5rem;
+  background-color: rgba(var(--crust-raw), .9);
+
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1;
+  white-space: nowrap;
+  color: rgba(var(--gradient-colour), 1);
+
+}
+
+
+.card-title { color: var(--text); }
+.card-description { color: var(--overlay2); }
+
+
+
+
+.geek-code {
+
+  width: 100%;
+  margin-block: 4.8rem; padding: 2.4rem;
+
+  border-radius: 8px;
+  background-color: var(--mantle);
+  box-shadow: 0 5px 2rem rgba(var(--crust-raw), .3);
+
+  font-family: monospace;
+  font-size: 1.6rem;
+
+}
+
+@media (max-width: 400px) {
+  .geek-code { margin-block: 2.4rem; }
+}
+
+
+.geek-code strong { color: var(--overlay2); }
+
+
+.footer-meta {
+
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--overlay0);
+
+}
