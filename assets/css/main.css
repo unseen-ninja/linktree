@@ -5,6 +5,17 @@
 
 
 
+@keyframes rotate {
+  from { scale: 1; }
+  33% { scale: 1 1.2; }
+  66% { scale: 1.2 1 }
+  to { scale: 1; }
+}
+
+
+
+
+
 *, *::before, *::after { box-sizing: border-box; }
 
 :root, html { font-size: 62.5%; }
@@ -79,6 +90,8 @@ body {
   font-size: 2rem;
   color: var(--text);
 
+  overflow-x: hidden;
+
 }
 
 @media (max-width: 400px) {
@@ -102,6 +115,39 @@ a { text-decoration: none; }
 .icon { font-family: 'Nerd Font' !important; }
 
 .text-mauve { color: var(--mauve); }
+
+
+
+
+
+.cursor {
+
+  position: absolute;
+  top: var(--cursorY); left: var(--cursorX);
+
+  width: 30vw; height: 30vw;
+
+  border-radius: 50%;
+  background-image: radial-gradient(var(--blue), var(--base));
+  opacity: var(--cursor-opacity, 0);
+
+  transform: translate(-50%, -50%);
+  animation: rotate 20s infinite;
+
+}
+
+.cursor-blur {
+
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+
+  backdrop-filter: blur(15vmax);
+
+}
+
+
+.content-wrapper { position: relative; z-index: 2; }
+
 
 
 
