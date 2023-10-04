@@ -74,6 +74,7 @@
   --mantle-raw: 41, 44, 60;
   --crust: rgb(35, 38, 52);
   --crust-raw: 35, 38, 52;
+  --cursor-colour: var(--blue-raw);
 
 }
 
@@ -128,7 +129,7 @@ a { text-decoration: none; }
   width: 30vw; height: 30vw;
 
   border-radius: 50%;
-  background-image: radial-gradient(var(--blue), var(--base));
+  background-image: radial-gradient(rgba(var(--cursor-colour), 1), var(--base));
   opacity: var(--cursor-opacity, 0);
 
   transform: translate(-50%, -50%);
