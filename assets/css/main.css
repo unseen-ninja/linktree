@@ -146,6 +146,7 @@ a { text-decoration: none; }
 }
 
 
+.cursor-wrapper { position: fixed; top: 0; right: 0; bottom: 0; left: 0; }
 .content-wrapper { position: relative; z-index: 2; }
 
 
